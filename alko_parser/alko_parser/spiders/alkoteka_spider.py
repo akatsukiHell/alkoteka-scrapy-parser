@@ -61,7 +61,7 @@ class Parser(Spider):
         Получаем API каталога для указанной категории и страницы
 
         Args:
-            root_category_slug (str): короткое название категории
+            root_category_slug (str): Короткое название категории
             page (int): Номер страницы для пагинации
 
         Returns:
@@ -85,7 +85,7 @@ class Parser(Spider):
         Парсим API товаров из полученной API-страницы каталога
 
         Args:
-            root_category_slug (str): короткое название категории
+            root_category_slug (str): Короткое название категории
             page (int): Номер страницы для пагинации
 
         Returns:
@@ -119,7 +119,7 @@ class Parser(Spider):
             response: Ответ от Scrapy с данными оригинальных ссылок на товар
 
         Returns:
-            dict: словарь со спаршенными данными
+            dict: Словарь со спаршенными данными
         """
         raw = response.json().get("results")
         json_parser = JsonParser(raw, response.meta.get("original_urls"))

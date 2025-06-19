@@ -102,7 +102,7 @@ class JsonParser:
             else:
                 value = block.get("min")
             data[title] = f"{value}{unit}"
-        data["Артикул"] = self.raw.get("vendor_code")
+        data["Артикул"] = str(self.raw.get("vendor_code"))
         data["Код товара"] = self.raw.get("uuid")
         return {"__description": self._get_description(), **data}
 
